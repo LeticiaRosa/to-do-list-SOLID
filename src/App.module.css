@@ -1,0 +1,53 @@
+.header {
+  background: var(--gray-700);
+  height: 12.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  height: 3rem;
+}
+
+.container {
+  display: block;
+  margin: 0 1rem 0 1rem;
+}
+
+.tasks {
+  margin: -1.8rem 0 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasks input[type="text"] {
+  background: var(--gray-500);
+  width: 40rem;
+  height: 3.3rem;
+  border-style: none;
+  border-radius: 8px;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info > div {
+  width: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--blue);
+  padding: 0 2rem 0 2rem;
+}
+
+.info > div > p {
+  display: flex;
+  padding: 0 1rem 0 0rem;
+}
