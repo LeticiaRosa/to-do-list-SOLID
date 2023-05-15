@@ -1,53 +1,95 @@
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .header {
   background: var(--gray-700);
+  width: 100%;
   height: 12.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .logo {
   height: 3rem;
 }
 
-.container {
-  display: block;
-  margin: 0 1rem 0 1rem;
+.containerTasks {
+  padding: 0 1rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 760px;
 }
 
 .tasks {
   margin: -1.8rem 0 4rem 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .tasks input[type="text"] {
   background: var(--gray-500);
-  width: 40rem;
+  width: 100%;
   height: 3.3rem;
   border-style: none;
   border-radius: 8px;
   padding-left: 1rem;
+  margin-right: 0.5rem;
   cursor: pointer;
 }
 
-.info {
+.tasks button {
+  background: var(--blue-dark);
+  width: 5.5rem;
+  height: 3.3rem;
+  border-style: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--white);
+  gap: 0.25rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 0.8rem;
 }
-.info > div {
-  width: 40rem;
+
+.info {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.infoTarefas {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 1rem;
+}
+
+.info p {
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--blue);
-  padding: 0 2rem 0 2rem;
 }
 
-.info > div > p {
-  display: flex;
-  padding: 0 1rem 0 0rem;
+.info span {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--white);
+  background: var(--gray-400);
+  border-style: none;
+  border-radius: 50%;
+}
+
+.info div:nth-child(2) p {
+  color: var(--purple);
 }
