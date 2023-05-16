@@ -17,8 +17,7 @@ main {
   height: 3rem;
 }
 
-.containerTasks {
-  padding: 0 1rem 0 1rem;
+.containerNewTasks {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,15 +25,16 @@ main {
   flex-wrap: wrap;
   width: 100%;
   max-width: 760px;
+  padding-bottom: 1.5rem;
 }
 
-.tasks {
+.newTasks {
   margin: -1.8rem 0 4rem 0;
   display: flex;
   width: 100%;
 }
 
-.tasks input[type="text"] {
+.newTasks input[type="text"] {
   background: var(--gray-500);
   width: 100%;
   height: 3.3rem;
@@ -45,7 +45,7 @@ main {
   cursor: pointer;
 }
 
-.tasks button {
+.newTasks button {
   background: var(--blue-dark);
   width: 5.5rem;
   height: 3.3rem;
