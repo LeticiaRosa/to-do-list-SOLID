@@ -11,6 +11,7 @@ interface TaskProps extends listOfTextsProps {
 export function Task({
   id,
   content,
+  checked,
   onCompleteTask,
   onDeleteTasks,
 }: TaskProps) {

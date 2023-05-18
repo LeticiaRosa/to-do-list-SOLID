@@ -87,7 +87,7 @@ main {
   color: var(--white);
   background: var(--gray-400);
   border-style: none;
-  border-radius: 50%;
+  border-radius: 35%;
 }
 
 .info div:nth-child(2) p {

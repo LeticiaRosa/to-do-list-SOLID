@@ -9,28 +9,35 @@ import { PlusCircle } from "@phosphor-icons/react";
 export interface listOfTextsProps {
   id: string;
   content: string;
-  // checked: boolean;
+  checked: boolean;
 }
 
 export function App() {
   const listOfTasksInitial: listOfTextsProps[] = [];
 
   const [listOfTasks, setListOfTasks] = useState(listOfTasksInitial);
-  const [listOfTasksDone, setListOfTasksDone] = useState<string[]>([]);
   const [newTask, setNewTask] = useState("");
 
-  function handleNewTask(event: ChangeEvent<HTMLInputElement>) {
-    setNewTask(event.target.value);
-  }
+  const listOfTasksDone = listOfTasks.reduce((counter, obj) => {
+    obj.checked === true ? (counter += 1) : null;
+    return counter;
+  }, 0);
+
+  // function handleNewTask(event: ChangeEvent<HTMLInputElement>) {
+  //   setNewTask(event.target.value);
+  // }
 
   function isNewTaskEmpty(event: FormEvent) {
+    const inputText = document.getElementById("input");
+
+    console.log(inputText);
     event.preventDefault();
     const convertToStringID = `${Math.random()}`;
     const listOfNewTasks: listOfTextsProps[] = [
       {
         id: convertToStringID,
         content: newTask,
-        // checked: false,
+        checked: false,
       },
     ];
     setListOfTasks([...listOfTasks, ...listOfNewTasks]);
@@ -44,14 +51,15 @@ export function App() {
   }
 
   function onCompleteTask(idToCompleted: string) {
-    const tasksDone = listOfTasksDone.filter((tasks) => {
-      return tasks !== idToCompleted;
+    const listOfTasksNew = listOfTasks.map(function (item) {
+      return {
+        id: item.id,
+        content: item.content,
+        checked: item.id == idToCompleted ? !item.checked : item.checked,
+      };
     });
-    tasksDone.length !== listOfTasksDone.length
-      ? setListOfTasksDone([...tasksDone])
-      : setListOfTasksDone([...tasksDone, idToCompleted]);
+    setListOfTasks(listOfTasksNew);
   }
-  console.log("renderizou");
   return (
     <main>
       <header className={styles.header}>
@@ -60,9 +68,9 @@ export function App() {
       <div className={styles.containerNewTasks}>
         <form className={styles.newTasks}>
           <input
+            id="input"
             type="text"
             placeholder="Adicione uma nova tarefa"
-            onChange={handleNewTask}
           />
           <button type="submit" onClick={isNewTaskEmpty}>
             Criar
@@ -77,7 +85,9 @@ export function App() {
           </div>
           <div className={styles.infoTarefas}>
             <p>Tarefas Concluidas</p>
-            <span>{listOfTasksDone.length}</span>
+            <span>
+              {listOfTasksDone} de {listOfTasks.length}
+            </span>
           </div>
         </div>
       </div>
@@ -88,6 +98,7 @@ export function App() {
             <Task
               content={text.content}
               id={text.id}
+              checked={text.checked}
               onCompleteTask={onCompleteTask}
               key={text.id}
               onDeleteTasks={onDeleteTasks}
