@@ -22,10 +22,12 @@ export function App() {
     return counter;
   }, 0);
 
-  function handleNewComment(event:FormEvent) {
+  function handleNewComment(event: FormEvent) {
     event.preventDefault();
-    const inputText = document.getElementById("input")as HTMLInputElement | null;
-    if (inputText?.value){
+    const inputText = document.getElementById(
+      "input"
+    ) as HTMLInputElement | null;
+    if (inputText?.value) {
       const convertToStringID = `${Math.random()}`;
       const listOfNewTasks: listOfTextsProps[] = [
         {
@@ -35,9 +37,8 @@ export function App() {
         },
       ];
       setListOfTasks([...listOfTasks, ...listOfNewTasks]);
-      inputText.value='';
+      inputText.value = "";
     }
-   
   }
 
   function onDeleteTasks(idToDelete: string) {
@@ -61,7 +62,6 @@ export function App() {
     event.target.setCustomValidity("Esse campo é obrigatório");
   }
 
-
   return (
     <main>
       <header className={styles.header}>
@@ -76,7 +76,7 @@ export function App() {
             required
             onInvalid={handleNewCommentInvalid}
           />
-          <button type="submit" onClick={handleNewComment} >
+          <button type="submit" onClick={handleNewComment}>
             Criar
             <PlusCircle size={20} />{" "}
           </button>
@@ -95,36 +95,38 @@ export function App() {
           </div>
         </div>
       </div>
+      <div className={styles.containerListTasks}>
+        {listOfTasks.length ? (
+          listOfTasks.map((text) => {
+            return (
+              <Task
+                content={text.content}
+                id={text.id}
+                checked={text.checked}
+                onCompleteTask={onCompleteTask}
+                key={text.id}
+                onDeleteTasks={onDeleteTasks}
+              />
+            );
+          })
+        ) : (
+          <div className={styles.withoutTasks}>
+            <div className={styles.lineContainer}>
+              <div className={styles.line}></div>
+            </div>
 
-     
-
-      {listOfTasks.length ? (
-        listOfTasks.map((text) => {
-          return (
-            <Task
-              content={text.content}
-              id={text.id}
-              checked={text.checked}
-              onCompleteTask={onCompleteTask}
-              key={text.id}
-              onDeleteTasks={onDeleteTasks}
-            />
-          );
-        })
-      ) : (
-        <div className={styles.withoutTasks}>   
-          <div className={styles.lineContainer}>
-            <div className={styles.line}></div> 
-          </div> 
-            
-            <div className={styles.container}>              
-              <img className={styles.imageClipBoard} src={imageClipBoard} alt="" />
-              <p>Você ainda não tem tarefas cadastradas</p> 
+            <div className={styles.container}>
+              <img
+                className={styles.imageClipBoard}
+                src={imageClipBoard}
+                alt=""
+              />
+              <p>Você ainda não tem tarefas cadastradas</p>
               <p>Crie tarefas e organize seus itens a fazer</p>
             </div>
-        </div>
-        
-      )}
+          </div>
+        )}
+      </div>
     </main>
   );
 }

@@ -10,7 +10,7 @@
   color: var(--white);
   font-size: 14px;
   font-weight: normal;
-  margin: 0.5rem;
+  margin-top: 1.5rem;
   word-wrap: break-word;
 }
 
@@ -63,7 +63,6 @@ button {
   border-radius: 2px;
 }
 
-
-.paragrafo{
+.paragrafo {
   text-decoration: line-through;
 }

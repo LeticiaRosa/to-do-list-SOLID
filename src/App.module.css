@@ -2,7 +2,6 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
 
 .header {
@@ -13,7 +12,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 
 .logo {
   height: 3rem;
@@ -45,6 +43,7 @@ main {
   padding-left: 1rem;
   margin-right: 0.5rem;
   cursor: pointer;
+  color: var(--white);
 }
 
 .newTasks button {
@@ -61,7 +60,6 @@ main {
   align-items: center;
   padding: 0.8rem;
 }
-
 
 .newTasks button:disabled {
   opacity: 0.7;
@@ -102,20 +100,27 @@ main {
   color: var(--purple);
 }
 
-
-
-
-.withoutTasks{
+.containerListTasks {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
   max-width: 760px;
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
-.lineContainer{
+.withoutTasks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 760px;
+  padding-top: 1rem;
+}
+
+.lineContainer {
   display: block;
   align-items: center;
   justify-content: center;
@@ -125,11 +130,12 @@ main {
 }
 
 .line {
+  padding: 1rem;
   border-radius: 5px;
   border-top: 1px solid var(--gray-400);
 }
 
-.container{
+.container {
   padding-top: 1rem;
   display: flex;
   align-items: center;
@@ -137,25 +143,22 @@ main {
   flex-direction: column;
 }
 
-.container>p{
-  color:var(--gray-300);
-  font-size: 1rem; 
+.container > p {
+  color: var(--gray-300);
+  font-size: 1rem;
 }
 
-.container > :nth-child(2){
+.container > :nth-child(2) {
   padding-top: 1rem;
   font-weight: 700;
 }
 
-.container > :nth-child(3){
+.container > :nth-child(3) {
   font-size: 1rem;
   padding-top: 0.5rem;
 }
 
-.imageClipBoard{
+.imageClipBoard {
   width: 3.5rem;
   height: 3.5rem;
 }
-
-
-
