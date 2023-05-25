@@ -11,7 +11,6 @@ interface TaskProps extends listOfTextsProps {
 export function Task({
   id,
   content,
-  checked,
   onCompleteTask,
   onDeleteTasks,
 }: TaskProps) {
@@ -31,6 +30,7 @@ export function Task({
     handleCompleteTask();
   }
 
+
   return (
     <div className={styles.container}>
       <div className={styles.round}>
@@ -42,9 +42,9 @@ export function Task({
         />
         <label htmlFor={id}></label>
       </div>
-      <p className={styles.text}>{content}</p>
+      <p className={check?styles.paragrafo:styles.text} id="paragrafo">{content}</p>
 
-      <button title="Deleta Comentário" onClick={handleDeleteTasks}>
+      <button title="Deleta Comentário" onClick={handleDeleteTasks} > 
         <Trash size={20} />
       </button>
     </div>

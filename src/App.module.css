@@ -2,6 +2,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
+
 }
 
 .header {
@@ -12,6 +13,7 @@ main {
   justify-content: center;
   align-items: center;
 }
+
 
 .logo {
   height: 3rem;
@@ -25,7 +27,7 @@ main {
   flex-wrap: wrap;
   width: 100%;
   max-width: 760px;
-  padding-bottom: 1.5rem;
+  padding: 0 1rem;
 }
 
 .newTasks {
@@ -58,6 +60,12 @@ main {
   display: flex;
   align-items: center;
   padding: 0.8rem;
+}
+
+
+.newTasks button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .info {
@@ -93,3 +101,61 @@ main {
 .info div:nth-child(2) p {
   color: var(--purple);
 }
+
+
+
+
+.withoutTasks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 760px;
+  padding: 1.2rem;
+}
+
+.lineContainer{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 760px;
+  margin: 0.5rem;
+}
+
+.line {
+  border-radius: 5px;
+  border-top: 1px solid var(--gray-400);
+}
+
+.container{
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container>p{
+  color:var(--gray-300);
+  font-size: 1rem; 
+}
+
+.container > :nth-child(2){
+  padding-top: 1rem;
+  font-weight: 700;
+}
+
+.container > :nth-child(3){
+  font-size: 1rem;
+  padding-top: 0.5rem;
+}
+
+.imageClipBoard{
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+
+
