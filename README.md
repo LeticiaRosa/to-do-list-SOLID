@@ -1,6 +1,11 @@
-# 01-praticando-conceitos-reactjs-ts
-01-praticando-conceitos-reactjs-ts 
 
+Projeto TODO!
+
+Se trata de uma aplicação de controle de tarefas no estilo to-do list, que contém as seguintes funcionalidades:
+- Adicionar uma nova tarefa
+- Marcar e desmarcar uma tarefa como concluída
+- Remover uma tarefa da listagem
+- Mostrar o progresso de conclusão das tarefas
 
 https://www.figma.com/file/7vJkJWOo2dT0vQlWrhg8kG/ToDo-List-(Copy)?type=design&node-id=0-1&t=zBYDbkL2e0IfpNGS-0
 
