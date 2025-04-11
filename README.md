@@ -48,10 +48,10 @@ src/
 └── main.tsx
 ```
 
-##💡 Contribuindo
+## 💡 Contribuindo
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou pull request. Este projeto tem como objetivo demonstrar a aplicação dos princípios SOLID em um app React com TypeScript.
 
-##📝 Licença
+## 📝 Licença
 Este projeto está sob a licença MIT.
 
 Feito com 💜 por Letícia Rosa
