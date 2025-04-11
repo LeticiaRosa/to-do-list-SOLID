@@ -1,16 +1,16 @@
 import styles from "./Tasks.module.css";
 import { Trash } from "@phosphor-icons/react";
-import { listOfTextsProps } from "../../Form/Form";
 import { useState } from "react";
+import { ITask } from "../../../interfaces/ITask";
 
-interface TaskProps extends listOfTextsProps {
+interface TaskProps extends ITask {
   onDeleteTasks: (idToDelete: string) => void;
   onCompleteTask: (idToCompleted: string) => void;
 }
 
 export function Task({
   id,
-  content,
+  title,
   onCompleteTask,
   onDeleteTasks,
 }: TaskProps) {
@@ -42,7 +42,7 @@ export function Task({
         />
         <label htmlFor={id}></label>
       </div>
-      <p className={check?styles.paragrafo:styles.text} id="paragrafo">{content}</p>
+      <p className={check?styles.paragrafo:styles.text} id="paragrafo">{title}</p>
 
       <button title="Deleta Comentário" onClick={handleDeleteTasks} > 
         <Trash size={20} />

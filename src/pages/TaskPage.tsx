@@ -1,20 +1,44 @@
-import "../css/global.css"
+import "../css/global.css";
 import { Header } from "../components/Header/Header";
-import { Form, listOfTextsProps } from "../components/Form/Form";
+import { Form } from "../components/Form/Form";
 import styles from "./TaskPage.module.css";
-import { useState } from "react";
 import { InfoTasks } from "../components/InfoTasks/InfoTasks";
+import { TodoRepository } from "../repositories/TodoRepository";
+import { TodoService } from "../services/TodoService";
+import { useState } from "react";
 
+  
 export function TaskPage() {
-  const listOfTasksInitial: listOfTextsProps[] = [];
-  const [listOfTasks, setListOfTasks] = useState(listOfTasksInitial);
-    return (
-      <main>
-        <Header/> 
-        <div className={styles.containerNewTasks}>
-          <Form setNewTask={setListOfTasks} listTasks={listOfTasks}/> 
-          <InfoTasks listTasks={listOfTasks} setNewTask={setListOfTasks}/>
-        </div>
-      </main>
-    )
+  const repository = new TodoRepository();
+  const service = new TodoService(repository);
+  const [listTasks, setListTasks] = useState(service.getTodos());
+
+  function handleCreateTodo(content: string) {
+    service.createTodo(content);
+    setListTasks(service.getTodos());
+  }
+
+  function handleToggleDone(id: string) {
+    service.toggleTodoDone(id);
+    setListTasks(service.getTodos());
+  }
+
+  function handleDeleteTodo(id: string) {
+    service.deleteTodo(id);
+    setListTasks(service.getTodos());
+  }
+ 
+  return (
+    <main>
+      <Header />
+      <div className={styles.containerNewTasks}>
+        <Form onCreateTodo={handleCreateTodo} />
+        <InfoTasks
+          listTasks={listTasks}
+          onToggleDone={handleToggleDone}
+          onDelete={handleDeleteTodo}
+        />
+      </div>
+    </main>
+  );
 }
