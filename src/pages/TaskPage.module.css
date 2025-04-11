@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerNewTasks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 760px;
+  padding: 0 1rem;
+}

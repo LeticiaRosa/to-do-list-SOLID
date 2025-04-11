@@ -1,6 +1,6 @@
 import styles from "./Tasks.module.css";
 import { Trash } from "@phosphor-icons/react";
-import { listOfTextsProps } from "../App.tsx";
+import { listOfTextsProps } from "../../Form/Form";
 import { useState } from "react";
 
 interface TaskProps extends listOfTextsProps {
