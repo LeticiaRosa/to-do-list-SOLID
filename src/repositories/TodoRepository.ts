@@ -6,7 +6,6 @@ export class TodoRepository implements IListTaskRepository {
   private listTask: Task[] = [];
 
   getAll(): Task[] {
-    console.log(this.listTask)
     return this.listTask;
   }
 
@@ -22,5 +21,9 @@ export class TodoRepository implements IListTaskRepository {
 
   remove(id: string): void {
     this.listTask = this.listTask.filter(task => task.id !== id);
+  }
+
+  completedTasks(): number {
+    return this.getAll().filter((task) => task.done).length
   }
 }

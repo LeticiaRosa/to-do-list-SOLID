@@ -1,7 +1,7 @@
 import { IListTaskRepository } from "../interfaces/ITaskRepository";
 import { Task } from "../models/Task";
 
-export class TodoService{
+export class TodoService {
   constructor(
     private todoRepository: IListTaskRepository
   ){}
@@ -22,6 +22,10 @@ export class TodoService{
 
   deleteTodo(id: string): void {
     this.todoRepository.remove(id);
+  }
+
+  completedTasks(): number {
+    return this.todoRepository.completedTasks();
   }
 
 }

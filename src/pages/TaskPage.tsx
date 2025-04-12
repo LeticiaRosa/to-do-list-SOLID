@@ -1,6 +1,6 @@
 import "../css/global.css";
 import { Header } from "../components/Header/Header";
-import { Form } from "../components/Form/Form";
+import { FormTask } from "../components/FormTask/FormTask";
 import styles from "./TaskPage.module.css";
 import { InfoTasks } from "../components/InfoTasks/InfoTasks";
 import { TodoService } from "../services/TodoService";
@@ -32,11 +32,12 @@ export function TaskPage() {
     <main>
       <Header />
       <div className={styles.containerNewTasks}>
-        <Form onCreateTodo={handleCreateTodo} />
+        <FormTask onCreateTodo={handleCreateTodo} />
         <InfoTasks
           listTasks={listTasks}
           onToggleDone={handleToggleDone}
           onDelete={handleDeleteTodo}
+          completedTasks={service.completedTasks()}
         />
       </div>
     </main>

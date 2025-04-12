@@ -5,5 +5,6 @@ export interface IListTaskRepository {
   add(todo: Task): void;
   toggleDone(id: string): void;
   remove(id: string): void;
+  completedTasks(): number;
 }
 

@@ -30,5 +30,9 @@ export class LocalStorageRepository implements IListTaskRepository{
     const updatedTasks = tasks.filter(task => task.id !== id)
     localStorage.setItem('TasksToDoList', JSON.stringify(updatedTasks))
   }
+
+  completedTasks(): number {
+    return this.getAll().filter((task) => task.done).length
+  }
   
 }

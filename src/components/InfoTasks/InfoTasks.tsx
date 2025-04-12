@@ -8,11 +8,10 @@ interface InfoTasksProps{
   listTasks: ITask[];
   onToggleDone: (idToCompleted: string) => void;
   onDelete: (idToDelete: string) => void;
+  completedTasks: number;
 }
 
-export function InfoTasks({listTasks, onToggleDone, onDelete}: InfoTasksProps) {
-  console.log(listTasks)
-  const completedTasks = listTasks.filter((task) => task.done).length;
+export function InfoTasks({listTasks, onToggleDone, onDelete, completedTasks}: InfoTasksProps) {
   return (
     <>
         <div className={styles.info}>
