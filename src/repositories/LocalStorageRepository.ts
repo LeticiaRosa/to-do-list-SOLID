@@ -3,16 +3,32 @@ import { Task } from "../models/Task";
 
 export class LocalStorageRepository implements IListTaskRepository{
   getAll(): Task[] {
-    throw new Error("Method not implemented.");
+    const tasks = localStorage.getItem('TasksToDoList')
+    if (tasks) {
+      return JSON.parse(tasks)
+    }
+    return []
   }
   add(todo: Task): void {
-    throw new Error("Method not implemented.");
+    const tasks = this.getAll()
+    const updatedTasks = [...tasks, todo]
+    localStorage.setItem('TasksToDoList', JSON.stringify(updatedTasks))
+  
   }
   toggleDone(id: string): void {
-    throw new Error("Method not implemented.");
+    const tasks = this.getAll()
+    const updatedTasks = tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, done: !task.done }
+      }
+      return task
+    })
+    localStorage.setItem('TasksToDoList', JSON.stringify(updatedTasks))
   }
   remove(id: string): void {
-    throw new Error("Method not implemented.");
+    const tasks = this.getAll()
+    const updatedTasks = tasks.filter(task => task.id !== id)
+    localStorage.setItem('TasksToDoList', JSON.stringify(updatedTasks))
   }
   
 }

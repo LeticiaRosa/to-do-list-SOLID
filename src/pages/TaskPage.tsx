@@ -3,13 +3,13 @@ import { Header } from "../components/Header/Header";
 import { Form } from "../components/Form/Form";
 import styles from "./TaskPage.module.css";
 import { InfoTasks } from "../components/InfoTasks/InfoTasks";
-import { TodoRepository } from "../repositories/TodoRepository";
 import { TodoService } from "../services/TodoService";
 import { useState } from "react";
+import { LocalStorageRepository } from "../repositories/LocalStorageRepository";
 
   
 export function TaskPage() {
-  const repository = new TodoRepository();
+  const repository = new LocalStorageRepository();
   const service = new TodoService(repository);
   const [listTasks, setListTasks] = useState(service.getTodos());
 

@@ -11,6 +11,7 @@ interface TaskProps extends ITask {
 export function Task({
   id,
   title,
+  done,
   onCompleteTask,
   onDeleteTasks,
 }: TaskProps) {
@@ -22,7 +23,7 @@ export function Task({
     onCompleteTask(id);
   }
 
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState(done);
 
   function handleChecked() {
     const isChecked = !check;

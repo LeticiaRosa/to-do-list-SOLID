@@ -11,7 +11,8 @@ interface InfoTasksProps{
 }
 
 export function InfoTasks({listTasks, onToggleDone, onDelete}: InfoTasksProps) {
-  const completedTasks = listTasks.filter(task => task.done).length;
+  console.log(listTasks)
+  const completedTasks = listTasks.filter((task) => task.done).length;
   return (
     <>
         <div className={styles.info}>
