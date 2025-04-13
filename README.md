@@ -3,8 +3,9 @@
 Se trata de uma aplicação de controle de tarefas no estilo to-do list, que contém as seguintes funcionalidades:
 - ✅ Adicionar uma nova tarefa  
 - ✅ Marcar e desmarcar uma tarefa como concluída  
-- ✅ Remover uma tarefa da listagem  
-- ✅ Mostrar o progresso de conclusão das tarefas  
+- ✅ Remover uma tarefa da listagem 
+- ✅ Mostrar o progresso de conclusão das tarefas
+- ✅ Persistência das tarefas no navegador via localStorage
 
 ![image](https://github.com/LeticiaRosa/01-praticando-conceitos-reactjs-ts/assets/37852713/dcc8717e-08aa-4f93-85b1-83aafe58151f)
 
@@ -32,21 +33,25 @@ Este projeto está sendo refatorado para aplicar os **Princípios SOLID**, com f
 
 ```bash
 src/
-├── components/
+├── components/          # Componentes reutilizáveis
 │   └── TodoItem.tsx
-├── interfaces/
+├── interfaces/          # Interfaces para abstrações
 │   └── ITodoRepository.ts
-├── models/
+├── models/              # Entidades e modelos
 │   └── Todo.ts
-├── repositories/
+├── repositories/        # Implementações que acessam o armazenamento
 │   └── TodoRepository.ts
-├── services/
+├── services/            # Regras de negócio
 │   └── TodoService.ts
-├── pages/
+├── pages/               # Páginas principais do app
 │   └── Home.tsx
 ├── App.tsx
 └── main.tsx
 ```
+
+## 💾 Persistência com localStorage
+
+As tarefas são salvas localmente no navegador, garantindo que os dados do usuário não se percam ao recarregar a página.
 
 ## 💡 Contribuindo
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou pull request. Este projeto tem como objetivo demonstrar a aplicação dos princípios SOLID em um app React com TypeScript.
